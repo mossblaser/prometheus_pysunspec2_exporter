@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jdh_prometheus_sunspec_exporter"
+description = "A Prometheus exporter for sunspec devices."
+readme = "README.md"
+dynamic = ["version"]
+license = {file = "LICENCE"}
+dependencies = [
+    "pysunspec2",
+    "pyyaml",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "jdh_prometheus_sunspec_exporter.__version__"}
+
+[project.scripts]
+jdh_prometheus_sunspec_exporter = "jdh_prometheus_sunspec_exporter.run:main"
