@@ -3,11 +3,11 @@ from unittest.mock import Mock
 
 from pathlib import Path
 
-from jdh_prometheus_sunspec_exporter.sunspec import (
+from prometheus_pysunspec2_exporter.sunspec import (
     ReconnectingSunspecReader,
 )
 
-from jdh_prometheus_sunspec_exporter.collector import (
+from prometheus_pysunspec2_exporter.collector import (
     DeviceConfig,
     SunSpecCollector,
 )

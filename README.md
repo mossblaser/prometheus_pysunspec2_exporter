@@ -1,15 +1,15 @@
-(JDH) Prometheus SunSpec Exporter
-=================================
+Prometheus pySunSpec2 Exporter
+==============================
 
 This (unimaginatively named) Prometheus exporter exposes all of the numeric
-[data] points exposed by a [SunSpec](https://sunspec.org/)-compliant device.
-This includes a number of solar and energy storage systems such as those
+data points exposed by a [SunSpec](https://sunspec.org/)-compliant device.
+This includes a large number of solar and energy storage systems such as those
 manufactured by Fronius amongst [several
 hundred](https://sunspec.org/product-certification-registry/) others.
 
 This exporter is based on the
 [pySunSpec2](https://github.com/sunspec/pysunspec2) implementation of the
-SunSpec standard and therefore should support most old and new
+SunSpec standard and therefore should support both older and more recent
 SunSpec-compliant devices.
 
 
@@ -18,11 +18,11 @@ Quick-start
 
 Install from PyPI using:
 
-    $ pip install jdh_prometheus_sunspec_exporter
+    $ pip install prometheus_pysunspec2_exporter
 
 The exporter is started using:
 
-    $ jdh_prometheus_sunspec_exporter path/to/config.yml [--address=0.0.0.0] [--port=9502]
+    $ prometheus_pysunspec2_exporter path/to/config.yml [--address=0.0.0.0] [--port=9502]
 
 The exporter is configured via a YAML configuration file ([full documentation
 below](#config-documentation)) which looks like:
@@ -145,7 +145,7 @@ replacement. Noteworthy differences between these two exporters include:
   devices may only be supported by pySunSpec2.
 * This implementation supports reading metrics from multiple devices at once.
 * This implementation auto-reconnects to devices (e.g. after a network outage).
-* In this implementation makes no attempts to guess the metric type to use.
+* This implementation makes no attempts to guess the metric type to use.
   Everything is always a gauge.
 * This implementation doesn't include any data filtering/fix-up functionality.
 * This implementation is distributed as a regular Python package on PyPI and

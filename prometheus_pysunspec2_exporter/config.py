@@ -15,8 +15,8 @@ from sunspec2.modbus.client import (  # type: ignore
     SunSpecModbusClientDeviceRTU,
 )
 
-from jdh_prometheus_sunspec_exporter.sunspec import ReconnectingSunspecReader
-from jdh_prometheus_sunspec_exporter.collector import DeviceConfig
+from prometheus_pysunspec2_exporter.sunspec import ReconnectingSunspecReader
+from prometheus_pysunspec2_exporter.collector import DeviceConfig
 
 
 device_classes = {

@@ -9,7 +9,7 @@ from sunspec2.file.client import (  # type: ignore
     FileClientModel,
 )
 
-from jdh_prometheus_sunspec_exporter.sunspec import (
+from prometheus_pysunspec2_exporter.sunspec import (
     normalise_label,
     PointValue,
     iter_group_values,

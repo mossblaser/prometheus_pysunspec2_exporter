@@ -1,6 +1,6 @@
 import pytest
 
-from jdh_prometheus_sunspec_exporter.prometheus_metrics import (
+from prometheus_pysunspec2_exporter.prometheus_metrics import (
     MetricType,
     MetricValue,
     create_metric_families,

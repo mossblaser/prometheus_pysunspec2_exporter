@@ -5,12 +5,12 @@ import logging
 from prometheus_client.registry import Collector
 from prometheus_client.core import Metric
 
-from jdh_prometheus_sunspec_exporter.prometheus_metrics import (
+from prometheus_pysunspec2_exporter.prometheus_metrics import (
     MetricType,
     MetricValue,
     create_metric_families,
 )
-from jdh_prometheus_sunspec_exporter.sunspec import ReconnectingSunspecReader
+from prometheus_pysunspec2_exporter.sunspec import ReconnectingSunspecReader
 
 
 logger = logging.getLogger(__name__)

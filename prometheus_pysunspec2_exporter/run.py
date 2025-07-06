@@ -12,8 +12,8 @@ from prometheus_client import (
     GC_COLLECTOR,
 )
 
-from jdh_prometheus_sunspec_exporter.config import parse_config, ConfigError
-from jdh_prometheus_sunspec_exporter.collector import SunSpecCollector
+from prometheus_pysunspec2_exporter.config import parse_config, ConfigError
+from prometheus_pysunspec2_exporter.collector import SunSpecCollector
 
 
 def run_exporter_until_terminated(*args, **kwargs) -> None:

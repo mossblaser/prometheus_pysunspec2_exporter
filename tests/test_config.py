@@ -2,7 +2,7 @@ import pytest
 
 import yaml
 
-from jdh_prometheus_sunspec_exporter.config import (
+from prometheus_pysunspec2_exporter.config import (
     ConfigError,
     parse_config,
 )
