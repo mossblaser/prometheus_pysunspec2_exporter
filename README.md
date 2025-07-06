@@ -135,7 +135,7 @@ See also
 
 This project was inspired by Ramon Buckland's
 [inosion/prometheus-sunspec-exporter](https://github.com/inosion/prometheus-sunspec-exporter)
-implementation which is built on the ['v1' pySunSpec
+implementation which is built on the [earlier pySunSpec
 library](https://github.com/sunspec/pysunspec), but is not a drop-in
 replacement. Noteworthy differences between these two exporters include:
 
