@@ -152,7 +152,23 @@ class ReconnectingSunspecReader:
             # (Re-)connect if required and refresh all models
             if self._device is None:
                 self._device = self._make_device()
-                self._device.scan()
+
+                # NB: Connect only present on non-file devices
+                if hasattr(self._device, "connect"):
+                    self._device.connect()
+
+                # Workaround: The behaviour of the default 'connect' mode of
+                # TCP devices is to *disconnect* any existing connection and
+                # then leave the device disconnected after scanning. As such we
+                # need to set it to False to retain our connection. (See GitHub
+                # issue sunspec/pySunSpec2#114).
+                #
+                # Of course, only TCP devices accept the 'connect' argument so
+                # we need this ugly try-except whilst this bug persists.
+                try:
+                    self._device.scan(connect=False)
+                except TypeError:
+                    self._device.scan()
             else:
                 for model in self._device.model_list:
                     if (
@@ -180,6 +196,9 @@ class ReconnectingSunspecReader:
         """
         if self._device is not None:
             try:
+                # NB: Disconnect method only present on non-file devices
+                if hasattr(self._device, "disconnect"):
+                    self._device.disconnect()
                 self._device.close()
             except Exception:
                 logger.exception("Unable to close connection")
